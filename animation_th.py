@@ -5,22 +5,23 @@ from net import Network, Punti
 from matplotlib.animation import FuncAnimation
 import os
 
-os.chdir("home/THESIs/")
+#Insert any Path that you prefer
+os.chdir("home")
 
 inf = float('inf')
 epsilon = -np.pi
 r_dom = 2*np.pi
 punti = Punti(r_dom, epsilon) 
-pp_gen = 1000 #numero di punti generati
+pp_gen = 1000 #number of point you want to generate
 x = punti.generatore(pp_gen).reshape(-1,1)
-yy = np.exp(-(x**2)/2) * np.cos(4*x)*np.sin(4*x) + 0.3*np.sin(2*x) + 0.1*np.cos(4*x) #funzione da approssimare
+yy = np.exp(-(x**2)/2) * np.cos(4*x)*np.sin(4*x) + 0.3*np.sin(2*x) + 0.1*np.cos(4*x) #Function you want to approximate
 num_input = 1
 num_hidden = 128
 num_output = 1
 fft = np.fft.fft(yy)
-EPOCHS = 20 #numero di epoche
+EPOCHS = 20
 lr = 1e-2
-def cosine_squasher(k): #funzione di attivazione
+def cosine_squasher(k): #activation function
         y = np.zeros(k.shape)
         for i in range(k.shape[0]):
             for j in range(k.shape[1]):
@@ -46,6 +47,8 @@ def cosine_squasher_deriv(k): #derivata della funzione di attivazione
         return y
 
 class Neural_Network():
+
+        
         def __init__(self,x,w1,w2,b1,b2, epoch, lr): 
             self.x = x
             self.w1 = w1
@@ -76,7 +79,7 @@ class Neural_Network():
                     grad_b1 = np.sum(grad_hidden*deriv, axis=0, keepdims=True)
 
                     #------------------------------------#
-                    #--AGGIORNAMENTO DEI PESI------------#
+                    #--WEIGHT UPDATE--------------------#
                     #------------------------------------#
                     w1 = w1 - lr * grad_w1
                     b1 = b1 - lr * grad_b1
@@ -124,6 +127,7 @@ def animate(i):
 ani = FuncAnimation(fig, animate,interval=800, blit=True, save_count=50, frames = EPOCHS*5) 
 ani.save('cosine1.gif', writer='imagemagick', fps=60)
 plt.show()
+
 
 
 
