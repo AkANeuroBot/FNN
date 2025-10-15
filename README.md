@@ -5,5 +5,10 @@ If you want to test the net you can lunch the others prog_th#.py programs, as yo
 
 # net.py
 
-Inside this file code you can find the structures of the two Neural Network that i create. The first one, Cosine_Net, is using a cosine squasher function as activation function of the hidden layer, the other one, Logistic_Net, use logistic function. The net consist in comparing these two N.N. in loss, efficiencies, etc. 
-The code is written using object paradigma, so you can call instances of Network and the compute the training of one of them, or both...
+Inside this file code you can find the structures of the two Neural Network that i create. The first one, _Cosine_Net_, is using a cosine squasher function as activation function of the hidden layer, the other one, _Logistic_Net_, use logistic function. The net consist in comparing these two N.N. in loss, efficiencies, etc. 
+The code is written using object paradigma, so you can call instances of Network and compute training of one of them, or both...
+
+# Disclaimer 
+
+This project has been my Bachelor Thesis for University of Trieste. 
+The only intent of the work is to **show** that's possible to create a Neural Network that can approximate any signal and extracting its feature through weights of the Net.
