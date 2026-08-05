@@ -15,8 +15,8 @@ Gallant and White (1988) showed that a single-hidden-layer network with the *cos
 $$
 \sigma(z) =
 \begin{cases}
-0, & z < -\pi/2 \\[2pt]
-\tfrac{1}{2}\left[\cos\!\left(z + \tfrac{3}{2}\pi\right) + 1\right], & -\pi/2 \le z \le \pi/2 \\[2pt]
+0, & z < -\pi/2 \\
+\tfrac{1}{2}\left[\cos\!\left(z + \tfrac{3}{2}\pi\right) + 1\right], & -\pi/2 \le z \le \pi/2 \\
 1, & z > \pi/2
 \end{cases}
 $$
