@@ -16,7 +16,7 @@ $$
 \sigma(z) =
 \begin{cases}
 0, & z < -\pi/2 \\
-\tfrac{1}{2}\left[\cos\!\left(z + \tfrac{3}{2}\pi\right) + 1\right], & -\pi/2 \le z \le \pi/2 \\
+\tfrac{1}{2}\left[\cos\left(z + \tfrac{3}{2}\pi\right) + 1\right], & -\pi/2 \le z \le \pi/2 \\
 1, & z > \pi/2
 \end{cases}
 $$
